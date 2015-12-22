@@ -10,13 +10,6 @@ mongoose.connect('mongodb://localhost/rethread');
 
 var User = require('./models/User.js');
 
-var app = express();
-app.use(session({ secret: 'I hope this rethread thing works'}));
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../public'));
-app.use(passport.initialize());
-app.use(passport.session());
-
 passport.use(new LocalStrategy(
   function(email, password, done) {
     User.findOne({ email: email }, function (err, user) {
@@ -42,6 +35,14 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, done) {
 	done(null, obj);
 });
+
+
+var app = express();
+app.use(session({ secret: 'I hope this rethread thing works'}));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/../public'));
+app.use(passport.initialize());
+app.use(passport.session());
 
 var requireAuth = function(req, res, next) {
 	if (!req.isAuthenticated()) {

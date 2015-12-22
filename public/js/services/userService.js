@@ -10,13 +10,13 @@ angular.module('rethread').service('userService', function($http, $q, $rootScope
 		});
 	};
 
-	this.login = function(creds) {
+	this.login = function(credentials) {
 		var deferred = $q.defer();
-
+		console.log("userService", credentials);
 		$http({
 			method: 'POST',
 			url: '/api/auth/local',
-			data: creds
+			data: credentials
 		}).then(function(res) {
 			console.log('Result from user login', res);
 			deferred.resolve(res.data);
@@ -36,6 +36,7 @@ angular.module('rethread').service('userService', function($http, $q, $rootScope
 
 	this.getAuthedUser = function() {
 		var deferred = $q.defer();
+		console.log('getAuthedUser');
 		if (user) {
 			deferred.resolve(user);
 		}
@@ -46,7 +47,7 @@ angular.module('rethread').service('userService', function($http, $q, $rootScope
 			}).then(function(result) {
 				user = result.data;
 				console.log('Result getting the logged in user', result);
-				deferred.resolve(res.data);
+				deferred.resolve(result.data);
 			});
 		}
 		return deferred.promise;
