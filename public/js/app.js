@@ -20,8 +20,9 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('logout', {
 			url: '/logout',
-			controller: function(userService) {
+			controller: function(userService, $state) {
 				userService.logout();
+				$state.go('home');
 			}
 		})
 		.state('auth', {
@@ -35,7 +36,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('auth.profile', {
 			url: '/profile',
-			template: '/templates/profile.html',
+			template: '../templates/profile.html',
 			controller: 'profileCtrl'
 		});
 
@@ -51,3 +52,5 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		};
 	});
 });
+
+

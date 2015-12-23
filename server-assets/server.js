@@ -6,11 +6,14 @@ var LocalStrategy = require('passport-local').Strategy;
 var port = 8080;
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rethread');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rethread');
 
 var User = require('./models/User.js');
 
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy({
+		usernameField: 'email',
+    	passwordField: 'password'
+	},
   function(email, password, done) {
     User.findOne({ email: email }, function (err, user) {
       if (err) { 

@@ -1,4 +1,4 @@
-angular.module('rethread').controller('registerCtrl', function($scope, userService) {
+angular.module('rethread').controller('registerCtrl', function($scope, userService, $state) {
 
 	$scope.register = function() {
 		userService.addUser({
@@ -6,6 +6,7 @@ angular.module('rethread').controller('registerCtrl', function($scope, userServi
 			password: $scope.password
 		}).then(function(result) {
 			console.log('User registered');
+			$state.go('login');
 		});
 	}
 
