@@ -36,7 +36,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('auth.profile', {
 			url: '/profile',
-			template: '../templates/profile.html',
+			template: '/templates/profile.html',
 			controller: 'profileCtrl'
 		});
 
