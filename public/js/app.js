@@ -38,6 +38,11 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 			url: '/profile',
 			template: '/templates/profile.html',
 			controller: 'profileCtrl'
+		})
+		.state('auth.products', {
+			url:'/products',
+			template: '/templates/products.html',
+			controller: 'productsCtrl'
 		});
 
 	$httpProvider.interceptors.push(function($q, $injector, $location) {
