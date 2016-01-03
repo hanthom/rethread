@@ -51,6 +51,7 @@ var requireAuth = function(req, res, next) {
 	if (!req.isAuthenticated()) {
 		return res.status(401).end();
 	}
+	console.log("requireAuth worked");
 	next();
 };
 
@@ -82,7 +83,12 @@ app.post('/api/auth/local', passport.authenticate('local'), function(req, res) {
 app.get('/api/auth/logout', function(req, res) {
 	req.logout();
 	return res.status(200).end();
-})
+});
+
+//Shirts Endpoints
+app.post('/api/shirts', function(req, res) {
+
+});
 
 app.listen(port, function() {
 	console.log('Listening on port', port);

@@ -7,7 +7,7 @@ angular.module('rethread').controller('loginCtrl', function($scope, userService,
     }).then(function(){
     	console.log("It worked");
       $scope.credentials = {};
-      $state.go('auth.profile');
+      $state.go('auth.productsList');
     });
   }
 });

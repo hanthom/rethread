@@ -5,7 +5,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 	$stateProvider
 		.state('home', {
 			url: '/home',
-			templateUrl: '/templates/home.html',
+			templateUrl: '/../templates/home.html',
 			controller: 'homeCtrl'
 		})
 		.state('register', {
@@ -30,7 +30,8 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 			template: '<ui-view></ui-view>',
 			resolve: {
 				user: function(userService) {
-					return userService.getAuthedUser();
+					console.log("User Service Auth call");
+					return userService.getAuthedUser()
 				}
 			}
 		})
@@ -39,10 +40,20 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 			template: '/templates/profile.html',
 			controller: 'profileCtrl'
 		})
-		.state('auth.products', {
-			url:'/products',
-			template: '/templates/products.html',
-			controller: 'productsCtrl'
+		.state('auth.productsList', {
+			url: '/productsList',
+			template: '/templates/productsList.html',
+			controller: 'productsListCtrl',
+			resolve: {
+				consoleLog: function() {
+					console.log('Auth ProductsList');
+				}
+			}
+		})
+		.state('auth.shirts', {
+			url: '/productsList/shirts',
+			template: '/templates/shirts.html',
+			controller: 'shirtsCtrl'
 		});
 
 	$httpProvider.interceptors.push(function($q, $injector, $location) {
