@@ -37,12 +37,12 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('auth.profile', {
 			url: '/profile',
-			template: '/templates/profile.html',
+			templateUrl: '/templates/profile.html',
 			controller: 'profileCtrl'
 		})
 		.state('auth.productsList', {
 			url: '/productsList',
-			template: '/templates/productsList.html',
+			templateUrl: '/templates/productsList.html',
 			controller: 'productsListCtrl',
 			resolve: {
 				consoleLog: function() {
@@ -52,7 +52,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('auth.shirts', {
 			url: '/productsList/shirts',
-			template: '/templates/shirts.html',
+			templateUrl: '/templates/shirts.html',
 			controller: 'shirtsCtrl'
 		});
 
