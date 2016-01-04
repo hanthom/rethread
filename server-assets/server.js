@@ -4,11 +4,15 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var port = 8080;
+var q = require('q');
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rethread');
 
 var User = require('./models/User.js');
+var Shirt = require('./models/Shirt.js');
+
+mongoose.Promise = require('q').Promise;
 
 passport.use(new LocalStrategy({
 		usernameField: 'email',
@@ -49,6 +53,7 @@ app.use(passport.session());
 
 var requireAuth = function(req, res, next) {
 	if (!req.isAuthenticated()) {
+		console.log("requireAuth did not work");
 		return res.status(401).end();
 	}
 	console.log("requireAuth worked");
@@ -87,7 +92,21 @@ app.get('/api/auth/logout', function(req, res) {
 
 //Shirts Endpoints
 app.post('/api/shirts', function(req, res) {
+	var newShirt = new Shirt(req.body);
+	newShirt.save().then(function() {
+			console.log("test");
+			return res.send('Shirt added!');
+		}).catch(function(err) {
+			console.log(err);
+			return res.status(500).json(err);
+		});
+});
 
+app.get('/api/shirts', function(req, res) {
+	console.log("GET shirts");
+	Shirt.find().exec().then(function(shirts) {
+		return res.json(shirts);
+	});
 });
 
 app.listen(port, function() {

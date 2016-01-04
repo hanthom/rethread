@@ -6,8 +6,9 @@ var shirtSchema = new mongoose.Schema({
 	brand: {type:String, required: true},
 	size: {type: String, required: true, enum: ['XS', 'S', 'M', 'L', 'XL', '2XL']},
 	price: {type: Number, required: true},
+	image: {type: String, required: true},
 	description: String,
 	quantity: Number
 });
 
-module.exports = mongoose.model('Shirt', productSchema);
+module.exports = mongoose.model('Shirt', shirtSchema);
