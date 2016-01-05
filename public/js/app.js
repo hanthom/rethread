@@ -52,7 +52,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		})
 		.state('auth.shirtPage', {
 			url: '/productsList/shirts/:id',
-			templateUrl: '/templates/shirtPage.html',
+			templateUrl: '/templates/shirtsPage.html',
 			controller: 'shirtsCtrl'
 		});
 
