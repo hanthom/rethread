@@ -1,3 +1,29 @@
-<h1>Available Shirts</h1>
 
-List of shirts to follow
+<div class="container" >
+	<div class="page-header">
+		<h1>Available Shirts</h1>
+	</div>
+	<div class="jumbotron">
+		<p>This is a test paragraph for better understanding bootstrap stuff</p>
+		<p>
+			<a href="#" class="btn btn-default btn-lg" role="button">Smore info</a>
+
+			<button type="submit" class="btn btn-danger" role="button">Button</button>
+
+			<input type="button" value="info" class="btn btn-info">
+
+			<button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary</button>
+		</p>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="shirt in shirts">
+			<div>
+				<h3>{{shirt.name}}</h3>
+				<p style="color:green">{{shirt.brand}}</p>
+				<img src={{shirt.image}} style="width:200px;height:228px;">
+			</div>
+
+		</div>
+	</div>
+</div>

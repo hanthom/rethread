@@ -1,0 +1,29 @@
+.slide1{
+  background-image: url('http://i.huffpost.com/gen/1605280/images/o-CLOTHING0205-facebook.jpg');
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide2{
+  background-image: url('http://images.wisegeek.com/shirts-on-clothes-line.jpg');
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide3{
+  background-image: url('http://g-ecx.images-amazon.com/images/G/01/img15/outdoors/billboard/19937_SO_BikeClothing_Broadway._CB306343753_.png');
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.carousel-caption h2{
+  font-size: 2.4em;
+  font-family: verdana;
+  padding-bottom: .4em;
+}
+.carousel-caption p{
+  font-size: 1em;
+}

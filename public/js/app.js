@@ -43,12 +43,7 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		.state('auth.productsList', {
 			url: '/productsList',
 			templateUrl: '/templates/productsList.html',
-			controller: 'productsListCtrl',
-			resolve: {
-				consoleLog: function() {
-					console.log('Auth ProductsList');
-				}
-			}
+			controller: 'productsListCtrl'
 		})
 		.state('auth.shirts', {
 			url: '/productsList/shirts',
