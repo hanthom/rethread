@@ -123,6 +123,11 @@ app.get('/api/shirts', function(req, res) {
 	});
 });
 
+// app.get('/api/shirts/:id', function(req, res) {
+// 	console.log("Get specific shirt");
+// 	Shirt.findById()
+// });
+
 app.listen(port, function() {
 	console.log('Listening on port', port);
 });
