@@ -7,7 +7,14 @@ var userSchema = new mongoose.Schema({
 	password: {type:String, required: true},
 	wallet: Number,
 	cart: Array,
-	itemsOfInterest: Array
+	itemsOfInterest: Array,
+	roles: [
+		{
+			type: String, 
+			enum: ['normal', 'admin', 'moderator'],
+			default: 'normal'
+		}
+	]
 });
 
 userSchema.methods.verifyPassword = function(givenPassword) {

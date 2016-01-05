@@ -49,6 +49,11 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 			url: '/productsList/shirts',
 			templateUrl: '/templates/shirts.html',
 			controller: 'shirtsCtrl'
+		})
+		.state('auth.shirtPage', {
+			url: '/productsList/shirts/:id',
+			templateUrl: '/templates/shirtPage.html',
+			controller: 'shirtsCtrl'
 		});
 
 	$httpProvider.interceptors.push(function($q, $injector, $location) {

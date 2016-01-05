@@ -60,6 +60,20 @@ var requireAuth = function(req, res, next) {
 	next();
 };
 
+var requireRole = function(user, role) {
+	if (user.roles.indexOf(role) > -1) {
+		return true;
+	}
+	return false;
+};
+
+var requireAdmin = function(req, res, next) {
+	if (!requireRole(req.user, 'admin')) {
+		return res.status(403).end();
+	}
+	next();
+}
+
 app.get('/api/users/currentUser', requireAuth, function(req, res) {
 	return res.json(req.user);
 });
