@@ -9,8 +9,8 @@ var q = require('q');
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/rethread');
 
-var User = require('./models/User.js');
-var Shirt = require('./models/Shirt.js');
+var User = require('./server-assets/models/User.js');
+var Shirt = require('./server-assets/models/Shirt.js');
 
 mongoose.Promise = require('q').Promise;
 
@@ -47,7 +47,7 @@ passport.deserializeUser(function(obj, done) {
 var app = express();
 app.use(session({ secret: 'I hope this rethread thing works'}));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
