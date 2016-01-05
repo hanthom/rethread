@@ -21,7 +21,7 @@
 			<div>
 				<h3>{{shirt.name}}</h3>
 				<p style="color:green">{{shirt.brand}}</p>
-				<a ui-sref="auth.shirtPage({id: shirt.id})"><img src={{shirt.image}} style="width:200px;height:228px;"></a>
+				<a ui-sref="auth.shirtPage({id: shirt.id})" ng-click="getTargetShirt(shirt)"><img src={{shirt.image}} style="width:200px;height:228px;"></a>
 			</div>
 		</div>
 	</div>

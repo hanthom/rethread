@@ -8,6 +8,12 @@ angular.module('rethread').controller('shirtsCtrl', function($scope, shirtServic
 
 	$scope.getShirts();
 
+	$scope.targetShirt = {};
+
+	$scope.getTargetShirt = function(shirt) {
+		$scope.targetShirt = shirt;
+	} 
+
 	// $scope.getSpecificShirt = function(idObj) {
 	// 	shirtService.getSpecificShirt().then(function(shirts) {
 			
