@@ -1,0 +1,51 @@
+[
+	{
+		"name": "Oxford Cotton Slim Fit Casual Button-Down",
+		"size": "L",
+		"brand": "H2H",
+		"price": 25.00,
+		"image": "http://www.h2hstore.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/k/m/kmtstl0219-navy-1.jpg"
+	},
+	{
+		"name": "Indian Cotton Plaid Button-Down",
+		"size": "M",
+		"brand": "J. Crew",
+		"price": 20.00,
+		"image": "http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=88143403"
+	},
+	{
+		"name": "Men's Button-Down Shirt",
+		"size": "S",
+		"brand": "American Apparel",
+		"price": 15.00,
+		"image": "http://pics.ae.com/is/image/aeo/0153_9142_600_f?fit=crop&wid=450&hei=504&qlt=50,0"
+	},
+	{
+		"name": "Delridge Short Sleeve Button-Down",
+		"size": "L",
+		"brand": "The North Face",
+		"price": 17.00,
+		"image": "http://images.evo.com/imgp/700/84919/396935/the-north-face-delridge-short-sleeve-button-down-shirt-tnf-red.jpg"
+	},
+	{
+		"name": "Who knows...",
+		"size": "M",
+		"brand": "The Joker",
+		"price": 10.00,
+		"image": "http://cdn.sidewalkhustle.netdna-cdn.com/wp-content/uploads/2013/06/26/Saturdays-Surf-NYC-Esquina-Floral-Print-Button-Down-Shirt-Red.jpg"
+	},
+	{
+		"name": "Bearhead Long Sleeve Button-Down",
+		"size": "L",
+		"brand": "The North Face",
+		"price": 20.00,
+		"image": "http://images.evo.com/imgp/700/77216/377660/the-north-face-bearhead-long-sleeve-button-down-shirt-high-rise-grey-front.jpg"
+	},
+	{
+		"name": "Fancy Shirt",
+		"size": "XS",
+		"brand": "The best",
+		"price": 100.00,
+		"image": "http://i.ebayimg.com/images/i/141219766126-0-1/s-l1000.jpg"
+	}
+]
