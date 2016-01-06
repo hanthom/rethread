@@ -6,6 +6,7 @@ angular.module('rethread').service('shirtService', function($http, $q){
       method: 'GET',
       url: '/api/shirts'
     }).then(function(result) {
+      console.log(result);
       dfd.resolve(result.data);
     });
     return dfd.promise;
