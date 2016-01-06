@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 
 //mongodb://hanthom:Edinagamer21@ds039095.mongolab.com:39095/rethreadtest
 var MONGOLAB_URI = "mongodb://heroku_wl34lsmh:q9clsk2nsq2kmrtjbkffv7k070@ds039155.mongolab.com:39155/heroku_wl34lsmh";
-mongoose.connect('mongodb://localhost/rethread');
+mongoose.connect(MONGOLAB_URI || 'mongodb://localhost/rethread');
 
 var User = require('./server-assets/models/User.js');
 var Shirt = require('./server-assets/models/Shirt.js');
