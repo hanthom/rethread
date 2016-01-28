@@ -1,4 +1,4 @@
-angular.module('rethread').controller('shirtsCtrl', function($scope, shirtService){
+angular.module('rethread').controller('shirtsCtrl', function($scope, shirtService, $state){
 
 	$scope.getShirts = function() {
 		shirtService.getShirts().then(function(results) {
@@ -8,6 +8,10 @@ angular.module('rethread').controller('shirtsCtrl', function($scope, shirtServic
 	};
 
 	$scope.getShirts();
+
+	$scope.goShirtPage = function(shirtID) {
+		$state.go("auth.shirtPage", {id : shirtID})
+	}
 
 	// $scope.targetShirt = {};
 

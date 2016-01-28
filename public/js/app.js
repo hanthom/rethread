@@ -53,7 +53,12 @@ angular.module('rethread', ['ui.router']).config(function($urlRouterProvider, $s
 		.state('auth.shirtPage', {
 			url: '/productsList/shirts/:id',
 			templateUrl: '/templates/shirtsPage.html',
-			controller: 'shirtsCtrl'
+			controller: 'singleShirtCtrl',
+			resolve: {
+				resolveShirt: function($stateParams, shirtService) {
+					return shirtService.getOneShirt($stateParams.id);
+				}
+			}
 		});
 
 	$httpProvider.interceptors.push(function($q, $injector, $location) {

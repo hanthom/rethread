@@ -125,6 +125,14 @@ app.get('/api/shirts', function(req, res) {
 		return res.json(shirts);
 	});
 });
+app.get('/api/shirt/:id', function(req, res) {
+	console.log("GET Single Shirt");
+	Shirt.findById(req.params.id).exec().then(function(shirt) {
+		return res.json(shirt);
+	}).catch((err) => {
+		console.log("ERROR", err.stack);
+	});
+});
 
 // app.get('/api/shirts/:id', function(req, res) {
 // 	console.log("Get specific shirt");
